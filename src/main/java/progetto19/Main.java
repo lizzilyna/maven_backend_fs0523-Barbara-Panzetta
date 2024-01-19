@@ -23,8 +23,11 @@ public class Main {
 
         catalogo.rimuoviElementoPerISBN(58679566);
 
+        catalogo.ricercaPerISBN(123456789);
+
 
         System.out.println(catalogo);
+
 }
 
 }

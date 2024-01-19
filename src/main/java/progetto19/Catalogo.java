@@ -7,7 +7,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Catalogo {
-    private List<Articoli> archivio =new ArrayList<>();
+    private List<Articoli> archivio = new ArrayList<>();
 
     public Catalogo(List<Articoli> archivio) {
         this.archivio = archivio;
@@ -25,7 +25,7 @@ public class Catalogo {
         this.archivio = archivio;
     }
 
-    public void aggiungiElemento (Articoli elemento) {
+    public void aggiungiElemento(Articoli elemento) {
         archivio.add(elemento);
     }
 
@@ -41,5 +41,13 @@ public class Catalogo {
         result.append("}");
         return result.toString();
     }
+
+
+    public Optional<Articoli> ricercaPerISBN(long isbn) {
+        return archivio.stream()
+                .filter(e -> e.getISBN() == isbn)
+                .findFirst();
+
     }
 
+}
