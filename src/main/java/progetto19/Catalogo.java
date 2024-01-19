@@ -33,10 +33,13 @@ public class Catalogo {
         archivio.removeIf(e -> e.getISBN() == isbn);
     }
 
-    @Override
     public String toString() {
-        return "Catalogo{" +
-                "archivio=" + archivio +
-                '}';
+        StringBuilder result = new StringBuilder("Catalogo{\n");
+        for (Articoli articolo : archivio) {
+            result.append(" - ").append(articolo.toString()).append("\n");
+        }
+        result.append("}");
+        return result.toString();
     }
-}
+    }
+

@@ -33,7 +33,7 @@ public class Libri extends Articoli {
 
     @Override
     public String toString() {
-        return "Libri{" +
+        return super.toString() +"Libri{" +
                 "Autore='" + Autore + '\'' +
                 ", Genere='" + Genere + '\'' +
                 '}';
